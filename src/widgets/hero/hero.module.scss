@@ -97,7 +97,7 @@
 
   &Caption {
     position: absolute;
-    bottom: 95px;
+    bottom: 65px;
     left: 50%;
     z-index: 1;
     width: max-content;
@@ -105,6 +105,9 @@
     color: theme.$white;
     text-align: center;
     transform: translateX(-50%);
+    &Btn {
+      margin-top: 20px;
+    }
   }
 
   &CaptionTitle {

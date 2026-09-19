@@ -1,0 +1,13 @@
+@use "@/shared/theme/theme";
+.sectionTitle {
+  margin-right: 10px;
+  font-size: 40px;
+  &Wrap {
+    max-width: 888px;
+    margin-bottom: 40px;
+  }
+  &Accent {
+    color: theme.$gray;
+    font-size: 40px;
+  }
+}

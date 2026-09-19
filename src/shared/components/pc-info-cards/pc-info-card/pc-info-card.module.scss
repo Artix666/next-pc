@@ -1,0 +1,58 @@
+@use "@/shared/theme/theme";
+@use "@/shared/theme/mixins";
+
+.pcInfoCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: space-between;
+  min-height: 100%;
+
+  &Image {
+    border-radius: 16px;
+    width: 100%;
+  }
+  &Status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 20px;
+    border: 1px solid theme.$white;
+    border-radius: 16px;
+    font-size: 0.85 rem;
+    &Accent {
+      color: theme.$black;
+      background-color: theme.$yellow;
+      border: none;
+    }
+  }
+  &InfoWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  &Title {
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: 600;
+  }
+  &Desc {
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: theme.$gray;
+  }
+  &SubTitle {
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: theme.$gray;
+  }
+  &Price {
+    font-size: 18px;
+  }
+  &BtnWrap {
+    display: flex;
+    justify-content: center;
+  }
+}
