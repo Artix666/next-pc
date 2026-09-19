@@ -1,0 +1,6 @@
+@use "@/shared/theme/theme";
+
+@mixin glass {
+  background: theme.$glass;
+  backdrop-filter: blur(4px);
+}

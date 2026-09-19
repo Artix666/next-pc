@@ -1,0 +1,19 @@
+@use "@/shared/theme/theme";
+@use "@/shared/theme/mixins";
+
+.header {
+  margin-bottom: 40px;
+  padding: 40px;
+  border-radius: 0 0 20px 20px;
+  @include mixins.glass;
+
+  &NavList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &NavLogo {
+    width: 100%;
+    height: auto;
+  }
+}

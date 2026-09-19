@@ -1,0 +1,136 @@
+@use "@/shared/theme/theme";
+
+.hero {
+  &Slider {
+    width: calc(100% - 150px);
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 900px;
+    overflow: visible;
+    padding-bottom: 40px;
+
+    :global(.swiper-pagination) {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+    }
+
+    :global(.swiper-pagination-bullet) {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      margin: 0 !important;
+      border-radius: 10px;
+      background: theme.$gray;
+      opacity: 1;
+      overflow: hidden;
+      transition: width 0.3s ease;
+    }
+
+    :global(.swiper-pagination-bullet)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: theme.$green;
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+      width: 40px;
+    }
+
+    :global(.swiper-pagination-bullet-active)::before {
+      width: var(--hero-progress, 0%);
+    }
+  }
+
+  &Paused {
+    :global(.swiper-pagination-bullet-active)::before {
+      background: theme.$gray-light;
+    }
+  }
+
+  &Slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 24px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(theme.$black, 0.85) 0%,
+        rgba(theme.$black, 0.5) 22%,
+        rgba(theme.$black, 0) 50%
+      );
+      pointer-events: none;
+    }
+
+    &Strong::after {
+      background: linear-gradient(
+        to top,
+        rgba(theme.$black, 0.98) 0%,
+        rgba(theme.$black, 0.8) 35%,
+        rgba(theme.$black, 0.25) 60%,
+        rgba(theme.$black, 0) 80%
+      );
+    }
+  }
+
+  &Caption {
+    position: absolute;
+    bottom: 95px;
+    left: 50%;
+    z-index: 1;
+    width: max-content;
+    max-width: min(90%, 900px);
+    color: theme.$white;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  &CaptionTitle {
+    margin: 0;
+    font-size: clamp(28px, 3vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  &CaptionSubtitle {
+    margin: 12px 0 0;
+    color: theme.$text-muted;
+    font-size: clamp(16px, 1.5vw, 26px);
+    font-weight: 400;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  &Accent {
+    color: theme.$green;
+  }
+}
+
+:global(.swiper-slide) {
+  overflow: hidden;
+  border-radius: 24px;
+}

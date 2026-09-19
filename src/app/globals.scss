@@ -1,0 +1,26 @@
+@use "@/shared/theme/theme";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: theme.$bg-main;
+  color: theme.$white;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: var(--font-noto-sans), sans-serif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

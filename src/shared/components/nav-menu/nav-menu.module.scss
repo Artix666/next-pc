@@ -1,0 +1,28 @@
+@use "@/shared/theme/theme";
+.navMenu {
+  display: flex;
+  gap: 40px;
+  &Item {
+    font-size: 20px;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: theme.$green;
+    }
+  }
+  &Icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  &Icon {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    &:hover {
+      path {
+        transition: fill .2s ease-in-out;
+        fill: theme.$green;
+      }
+    }
+  }
+}
