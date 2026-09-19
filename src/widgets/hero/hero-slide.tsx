@@ -39,9 +39,7 @@ export const HeroSlide: FC<HeroSlideProps> = ({
   onMouseLeave,
 }): ReactElement => (
   <div
-    className={clsx(styles.heroSlide, {
-      [styles.heroSlideStrong]: banner.strongVignette,
-    })}
+    className={clsx(styles.heroSlide, banner.strongVignette && styles.heroSlideStrong)}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
   >

@@ -85,7 +85,7 @@ export const Hero: FC<HeroProps> = ({ className }): ReactElement => {
         pagination={{ clickable: true }}
         onSwiper={setSwiper}
         onSlideChange={handleSlideChange}
-        className={clsx(styles.heroSlider, { [styles.heroPaused]: paused })}
+        className={clsx(styles.heroSlider, paused && styles.heroPaused)}
       >
         {BANNERS.map((banner, index) => (
           <SwiperSlide key={banner.src}>

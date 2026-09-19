@@ -15,6 +15,9 @@ export function useInView(variant: IsVisibleVariant = 'default', threshold = 0.5
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        if (!entry) {
+          return;
+        }
         if (variant === 'default') {
           if (entry.isIntersecting) {
             setIsVisible(true);

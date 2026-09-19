@@ -12,8 +12,6 @@ interface PcInfoCardsProps {
 }
 
 export const PcInfoCards: FC<PcInfoCardsProps> = ({ className, isVisible }): ReactElement => {
-  console.log(isVisible);
-
   return (
     <ul className={clsx(styles.pcInfoCards, className)}>
       {PC_INFO_CARDS.map((card, i) => (
