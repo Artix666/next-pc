@@ -1,4 +1,4 @@
-@use "@/shared/theme/theme";
+@use '@/shared/theme/theme';
 
 .hero {
   &Slider {
@@ -32,7 +32,7 @@
     }
 
     :global(.swiper-pagination-bullet)::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -72,7 +72,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(

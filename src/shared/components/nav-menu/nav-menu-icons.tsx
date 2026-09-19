@@ -1,19 +1,16 @@
-import { type FC, type ReactElement } from "react";
-import {
-  BasketIcon,
-  ProfileIcon,
-  StatisticsIcon,
-} from "@/shared/components/icons";
-import styles from "./nav-menu.module.scss";
-import clsx from "clsx";
+import { type FC, type ReactElement } from 'react';
+
+import clsx from 'clsx';
+
+import { BasketIcon, ProfileIcon, StatisticsIcon } from '@/shared/components/icons';
+
+import styles from './nav-menu.module.scss';
 
 interface NavMenuIconsProps {
   className?: string;
 }
 
-export const NavMenuIcons: FC<NavMenuIconsProps> = ({
-  className,
-}): ReactElement => {
+export const NavMenuIcons: FC<NavMenuIconsProps> = ({ className }): ReactElement => {
   return (
     <ul className={clsx(styles.navMenuIcons, className)}>
       <li>

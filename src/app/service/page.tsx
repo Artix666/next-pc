@@ -1,7 +1,3 @@
-
-
 export default function ServicePage() {
-  return <div>
-    Сервис
-  </div>;
+  return <div>Сервис</div>;
 }

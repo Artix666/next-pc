@@ -1,16 +1,19 @@
-"use client";
-import clsx from "clsx";
-import { type FC, type ReactElement } from "react";
-import styles from "./pc-info.module.scss";
-import { Container, PcInfoCards, SectionTitle } from "@/shared/components";
-import { useInView } from "@/shared/hooks";
+'use client';
+import { type FC, type ReactElement } from 'react';
+
+import clsx from 'clsx';
+
+import { Container, PcInfoCards, SectionTitle } from '@/shared/components';
+import { useInView } from '@/shared/hooks';
+
+import styles from './pc-info.module.scss';
 
 interface PcInfoProps {
   className?: string;
 }
 
 export const PcInfo: FC<PcInfoProps> = ({ className }): ReactElement => {
-  const { isVisible, ref: sectionRef } = useInView("default");
+  const { isVisible, ref: sectionRef } = useInView('default');
 
   return (
     <section ref={sectionRef} className={clsx(styles.pcInfo, className)}>

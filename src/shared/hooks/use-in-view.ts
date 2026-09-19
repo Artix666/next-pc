@@ -1,13 +1,10 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
-type IsVisibleVariant = "default" | "toggle";
+type IsVisibleVariant = 'default' | 'toggle';
 
-export function useInView(
-  variant: IsVisibleVariant = "default",
-  threshold = 0.5,
-) {
+export function useInView(variant: IsVisibleVariant = 'default', threshold = 0.5) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -18,7 +15,7 @@ export function useInView(
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (variant === "default") {
+        if (variant === 'default') {
           if (entry.isIntersecting) {
             setIsVisible(true);
             observer.unobserve(element);
@@ -31,7 +28,7 @@ export function useInView(
       },
       {
         threshold: threshold,
-      },
+      }
     );
 
     observer.observe(element);

@@ -1,12 +1,15 @@
-import Image from "next/image";
-import { type FC, type ReactElement } from "react";
-import styles from "./pc-info-card.module.scss";
-import { type PcInfoCardsItem } from "@/shared/components/pc-info-cards";
-import clsx from "clsx";
-import { Button } from "@/shared/components";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
+import { type FC, type ReactElement } from 'react';
 
-type PcInfoCardProps = Omit<PcInfoCardsItem, "id"> & {
+import clsx from 'clsx';
+
+import { Button } from '@/shared/components';
+import { type PcInfoCardsItem } from '@/shared/components/pc-info-cards';
+
+import styles from './pc-info-card.module.scss';
+
+type PcInfoCardProps = Omit<PcInfoCardsItem, 'id'> & {
   className?: string;
 };
 
@@ -28,7 +31,7 @@ export const PcInfoCard: FC<PcInfoCardProps> = ({
       <span
         className={clsx(
           styles.pcInfoCardStatus,
-          status === "на заказ" ? styles.pcInfoCardStatusAccent : null,
+          status === 'на заказ' ? styles.pcInfoCardStatusAccent : null
         )}
       >
         {status}

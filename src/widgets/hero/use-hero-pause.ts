@@ -1,9 +1,10 @@
-import { useInView } from "@/shared/hooks";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+
+import { useInView } from '@/shared/hooks';
 
 export const useHeroPause = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const { isVisible: isHeroVisible, ref } = useInView("toggle", 0.1);
+  const { isVisible: isHeroVisible, ref } = useInView('toggle', 0.1);
   const [isTabVisible, setIsTabVisible] = useState(true);
 
   const paused = isHovered || !isHeroVisible || !isTabVisible;
@@ -13,10 +14,10 @@ export const useHeroPause = () => {
       setIsTabVisible(!document.hidden);
     };
 
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 

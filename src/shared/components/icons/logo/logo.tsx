@@ -1,4 +1,5 @@
-import { type FC, type ReactElement } from "react";
+import { type FC, type ReactElement } from 'react';
+
 interface LogoIconProps {
   className?: string;
 }
@@ -26,10 +27,7 @@ export const LogoIcon: FC<LogoIconProps> = ({ className }): ReactElement => {
       />
       <path fill="#ffffff" d="M803 140L880 212H945L915 183L836 113L803 140Z" />
       <path fill="#ffffff" d="M931 0H878L806 71L836 96H840L934 9L931 0Z" />
-      <path
-        fill="#ffffff"
-        d="M959 0L960 27L967 45L1073 46L1074 212H1127V47L1129 45H1249V0H959Z"
-      />
+      <path fill="#ffffff" d="M959 0L960 27L967 45L1073 46L1074 212H1127V47L1129 45H1249V0H959Z" />
       <path
         fill="#c0ff01"
         fillRule="evenodd"

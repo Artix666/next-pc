@@ -1,12 +1,13 @@
-import { type FC, type ReactElement } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { type FC, type ReactElement } from 'react';
 
-import Image from "next/image";
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { type Banner } from "./hero.data";
-import styles from "./hero.module.scss";
-import { Button } from "@/shared/components";
-import Link from "next/link";
+import { Button } from '@/shared/components';
+
+import { type Banner } from './hero.data';
+import styles from './hero.module.scss';
 
 interface HeroSlideProps {
   banner: Banner;
@@ -44,33 +45,21 @@ export const HeroSlide: FC<HeroSlideProps> = ({
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
   >
-    <Image
-      fill
-      src={banner.src}
-      alt={`Баннер ${index + 1}`}
-      priority={index === 0}
-    />
+    <Image fill src={banner.src} alt={`Баннер ${index + 1}`} priority={index === 0} />
     {banner.title || banner.subtitle ? (
       <div
         className={styles.heroCaption}
         style={{
-          bottom: index === 0 ? "90px" : "65px",
+          bottom: index === 0 ? '90px' : '65px',
         }}
       >
         {banner.title ? (
-          <p className={styles.heroCaptionTitle}>
-            {renderTitle(banner.title, banner.accent)}
-          </p>
+          <p className={styles.heroCaptionTitle}>{renderTitle(banner.title, banner.accent)}</p>
         ) : null}
-        {banner.subtitle ? (
-          <p className={styles.heroCaptionSubtitle}>{banner.subtitle}</p>
-        ) : null}
+        {banner.subtitle ? <p className={styles.heroCaptionSubtitle}>{banner.subtitle}</p> : null}
         {banner.btnText && banner.href && (
           <Link href={banner.href}>
-            <Button
-              className={clsx(styles.heroCaptionBtn)}
-              text={banner.btnText}
-            />
+            <Button className={clsx(styles.heroCaptionBtn)} text={banner.btnText} />
           </Link>
         )}
       </div>

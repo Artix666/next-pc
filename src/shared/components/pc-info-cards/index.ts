@@ -1,2 +1,2 @@
-export * from "./pc-info-cards";
-export * from "./pc-info-cards.data";
+export * from './pc-info-cards';
+export * from './pc-info-cards.data';

@@ -1,12 +1,10 @@
-import { type FC, type ReactElement } from "react";
+import { type FC, type ReactElement } from 'react';
 
 interface StatisticsIconProps {
   className?: string;
 }
 
-export const StatisticsIcon: FC<StatisticsIconProps> = ({
-  className,
-}): ReactElement => {
+export const StatisticsIcon: FC<StatisticsIconProps> = ({ className }): ReactElement => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

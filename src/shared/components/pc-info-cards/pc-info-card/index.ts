@@ -1,1 +1,1 @@
-export * from "./pc-info-card";
+export * from './pc-info-card';

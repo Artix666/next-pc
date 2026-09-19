@@ -1,20 +1,19 @@
-"use client";
+'use client';
 
-import { type FC, type ReactElement, useEffect, useRef, useState } from "react";
+import { type FC, type ReactElement, useEffect, useRef, useState } from 'react';
 
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperClass } from "swiper";
+import clsx from 'clsx';
+import type { Swiper as SwiperClass } from 'swiper';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import "swiper/css";
-import "swiper/css/pagination";
+import { HeroSlide } from './hero-slide';
+import { AUTOPLAY_DELAY, BANNERS, TRANSITION_SPEED } from './hero.data';
+import styles from './hero.module.scss';
+import { useHeroPause } from './use-hero-pause';
 
-import clsx from "clsx";
-
-import { AUTOPLAY_DELAY, BANNERS, TRANSITION_SPEED } from "./hero.data";
-import { HeroSlide } from "./hero-slide";
-import { useHeroPause } from "./use-hero-pause";
-import styles from "./hero.module.scss";
+import 'swiper/css';
 
 interface HeroProps {
   className?: string;
@@ -49,7 +48,7 @@ export const Hero: FC<HeroProps> = ({ className }): ReactElement => {
         const progress = Math.min(elapsedRef.current / AUTOPLAY_DELAY, 1);
         const bullet = swiper.pagination.bullets[swiper.activeIndex];
 
-        bullet?.style.setProperty("--hero-progress", `${progress * 100}%`);
+        bullet?.style.setProperty('--hero-progress', `${progress * 100}%`);
 
         if (progress >= 1) {
           elapsedRef.current = 0;
@@ -72,10 +71,7 @@ export const Hero: FC<HeroProps> = ({ className }): ReactElement => {
 
   const handleSlideChange = (instance: SwiperClass) => {
     elapsedRef.current = 0;
-    instance.pagination.bullets[instance.activeIndex]?.style.setProperty(
-      "--hero-progress",
-      "0%",
-    );
+    instance.pagination.bullets[instance.activeIndex]?.style.setProperty('--hero-progress', '0%');
   };
 
   return (

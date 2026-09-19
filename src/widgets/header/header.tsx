@@ -1,8 +1,11 @@
-import { Container, NavMenu, NavMenuIcons } from "@/shared/components";
-import { LogoIcon } from "@/shared/components/icons";
-import clsx from "clsx";
-import styles from "./header.module.scss";
-import { type FC, type ReactElement } from "react";
+import { type FC, type ReactElement } from 'react';
+
+import clsx from 'clsx';
+
+import { Container, NavMenu, NavMenuIcons } from '@/shared/components';
+import { LogoIcon } from '@/shared/components/icons';
+
+import styles from './header.module.scss';
 
 export const Header: FC = (): ReactElement => {
   return (

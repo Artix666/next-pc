@@ -1,6 +1,8 @@
-import clsx from "clsx";
-import styles from "./section-title.module.scss";
-import { type FC, type ReactElement } from "react";
+import { type FC, type ReactElement } from 'react';
+
+import clsx from 'clsx';
+
+import styles from './section-title.module.scss';
 
 interface SectionTitleProps {
   title: string;
