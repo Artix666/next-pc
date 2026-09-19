@@ -4,6 +4,7 @@ import { type FC, type ReactElement, useEffect, useRef, useState } from 'react';
 
 import clsx from 'clsx';
 import type { Swiper as SwiperClass } from 'swiper';
+import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,8 +13,6 @@ import { HeroSlide } from './hero-slide';
 import { AUTOPLAY_DELAY, BANNERS, TRANSITION_SPEED } from './hero.data';
 import styles from './hero.module.scss';
 import { useHeroPause } from './use-hero-pause';
-
-import 'swiper/css';
 
 interface HeroProps {
   className?: string;

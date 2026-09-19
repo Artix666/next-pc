@@ -24,8 +24,6 @@ export const PcInfoCard: FC<PcInfoCardProps> = ({
   btnText,
   href,
 }): ReactElement => {
-  console.log(btnText);
-
   return (
     <div className={clsx(styles.pcInfoCard, className)}>
       <span
