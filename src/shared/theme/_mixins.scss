@@ -2,5 +2,5 @@
 
 @mixin glass {
   background: theme.$glass;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(24px);
 }

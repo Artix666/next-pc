@@ -6,15 +6,28 @@ import { PcInfoCard } from "./pc-info-card/pc-info-card";
 
 interface PcInfoCardsProps {
   className?: string;
+  isVisible?: boolean;
 }
 
 export const PcInfoCards: FC<PcInfoCardsProps> = ({
   className,
+  isVisible,
 }): ReactElement => {
+  console.log(isVisible);
+
   return (
     <ul className={clsx(styles.pcInfoCards, className)}>
-      {PC_INFO_CARDS.map((card) => (
-        <li key={card.id}>
+      {PC_INFO_CARDS.map((card, i) => (
+        <li
+          className={clsx(
+            styles.pcInfoCardsItem,
+            isVisible && styles.pcInfoCardsItemActive,
+          )}
+          key={card.id}
+          style={{
+            transitionDelay: `${i * 150}ms`,
+          }}
+        >
           <PcInfoCard
             href={card.href}
             btnText={card.btnText}

@@ -22,8 +22,7 @@ interface HeroProps {
 
 export const Hero: FC<HeroProps> = ({ className }): ReactElement => {
   const [swiper, setSwiper] = useState<SwiperClass | null>(null);
-  const { paused, sectionRef, handleMouseEnter, handleMouseLeave } =
-    useHeroPause();
+  const { paused, ref, handleMouseEnter, handleMouseLeave } = useHeroPause();
 
   const elapsedRef = useRef(0);
   const pausedRef = useRef(paused);
@@ -80,7 +79,7 @@ export const Hero: FC<HeroProps> = ({ className }): ReactElement => {
   };
 
   return (
-    <section ref={sectionRef} className={clsx(styles.hero, className)}>
+    <section ref={ref} className={clsx(styles.hero, className)}>
       <Swiper
         modules={[Pagination]}
         slidesPerView={1.05}

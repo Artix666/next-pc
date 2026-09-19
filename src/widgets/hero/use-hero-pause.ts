@@ -1,11 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useInView } from "@/shared/hooks";
+import { useEffect, useState } from "react";
 
 export const useHeroPause = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isInView, setIsInView] = useState(true);
+  const { isVisible: isHeroVisible, ref } = useInView("toggle", 0.1);
   const [isTabVisible, setIsTabVisible] = useState(true);
 
-  const paused = isHovered || !isInView || !isTabVisible;
+  const paused = isHovered || !isHeroVisible || !isTabVisible;
 
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -19,22 +20,6 @@ export const useHeroPause = () => {
     };
   }, []);
 
-  const observerRef = useRef<IntersectionObserver | null>(null);
-
-  const sectionRef = useCallback((node: HTMLElement | null) => {
-    observerRef.current?.disconnect();
-
-    if (!node) {
-      return;
-    }
-
-    observerRef.current = new IntersectionObserver(
-      ([entry]) => setIsInView(entry.isIntersecting),
-      { threshold: 0.1 },
-    );
-    observerRef.current.observe(node);
-  }, []);
-
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -45,7 +30,7 @@ export const useHeroPause = () => {
 
   return {
     paused,
-    sectionRef,
+    ref,
     handleMouseEnter,
     handleMouseLeave,
   };
