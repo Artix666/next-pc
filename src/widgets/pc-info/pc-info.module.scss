@@ -1,5 +1,8 @@
+@use '@/shared/theme/theme';
 .pcInfo {
-  padding-top: 150px;
+  background-color: theme.$bg-main-light;
+  padding-top: 100px;
+  padding-bottom: 100px;
   margin-bottom: 100px;
   &Title {
     opacity: 0;

@@ -4,7 +4,7 @@ import { useInView } from '@/shared/hooks';
 
 export const useHeroPause = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const { isVisible: isHeroVisible, ref } = useInView('toggle', 0.1);
+  const { isVisible: isHeroVisible, ref } = useInView('toggle', 0.2);
   const [isTabVisible, setIsTabVisible] = useState(true);
 
   const paused = isHovered || !isHeroVisible || !isTabVisible;
